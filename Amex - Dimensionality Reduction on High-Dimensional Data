@@ -1,0 +1,15 @@
+Dimensionality Reduction on High-Dimensional Data (1000+ features)
+
+I began by performing feature-level analysis to understand the structure of the dataset.
+
+I identified sparse and low-variance columns created due to high-cardinality categorical variables, and I removed those as they contributed minimal information.
+
+Next, I checked numerical features for multicollinearity and dropped highly correlated columns to reduce redundancy.
+
+For the large one-hot encoded categorical features, I applied Truncated SVD because it is ideal for sparse high-dimensional matrices.
+
+This allowed me to compress over 800 categorical dimensions into 50 latent components while retaining around 95% of the variance.
+
+For the numerical features, I used PCA to reduce 150 numerical attributes to 12 principal components that captured the key variance patterns.
+
+Finally, I combined the SVD and PCA components, resulting in a significantly smaller yet highly informative feature space
